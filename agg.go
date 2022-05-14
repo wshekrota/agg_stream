@@ -84,7 +84,7 @@ func main() {
 			output[market]["mean_price"] = output[market]["total_price"] / output[market]["count"]
 			output[market]["mean_volume"] = output[market]["total_volume"] / output[market]["count"]
 			output[market]["volume_weighted_average_price"] = output[market]["total_price"] * Hash["volume"].(float64) / output[market]["total_volume"]
-			output[market]["percentage_buy"] = output[market]["count_buy"]+buy / output[market]["count"] * 100
+			output[market]["percentage_buy"] = output[market]["count_buy"] / output[market]["count"] * 100
 		} else {
 			// No then initialize
 			output[market] = map[string]float64{
