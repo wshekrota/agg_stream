@@ -75,7 +75,7 @@ func main() {
 		if _, ok := output[market]; ok {
 
 			// could later delete items like count,count_buy and total_price if you don't want to encode those
-			output[market]["count"]+=1.0
+			output[market]["count"]++
 			if buy==1.0 {
 				output[market]["count_buy"]++
 			}
