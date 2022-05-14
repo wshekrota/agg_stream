@@ -70,6 +70,8 @@ func main() {
 		var buy float64 = 0.0
 		if strconv.FormatBool(Hash["is_buy"].(bool))=="true" { buy = 1.0 }
 
+		// Does market key exist in map?
+		// yes?
 		if _, ok := output[market]; ok {
 
 			// could later delete items like count,count_buy and total_price if you don't want to encode those
@@ -84,6 +86,7 @@ func main() {
 			output[market]["volume_weighted_average_price"] = output[market]["total_price"] * Hash["volume"].(float64) / output[market]["total_volume"]
 			output[market]["percentage_buy"] = output[market]["count_buy"]+buy / output[market]["count"] * 100
 		} else {
+			// No then initialize
 			output[market] = map[string]float64{
 				"count":                         1.,
 				"count_buy":                     buy,
@@ -102,7 +105,9 @@ func main() {
 	for key, element := range output {
 
 		// Could put deletes here for the maps to make json output smaller
-
+		// delete(output[key],"count")
+		// delete(output[key],"count_buy")
+		// delete(output[key],"total_price")
 		line, _ := json.Marshal(element)
 		fmt.Println(key,"=",string(line))
 	}
