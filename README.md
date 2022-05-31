@@ -37,4 +37,5 @@ Keys in the per market map will be...
   count_buy if buy { count_buy += 1 }
 '''
 So overall structure is 
-###map[string]map[string]float64{}.
+
+### map[string]map[string]float64{}.
