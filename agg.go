@@ -20,6 +20,7 @@ import "strconv"
 
    Output:
 		Maps will be nested to maintain data agg.
+		Aggregate data per market (which is key). Market has a sub hash which maintains aggregated compute values.
 		Format: map[string]map[string]float64{} (seemed easier for me to make it all float)
 		Then you loop through the completed map encoding the data back to json.
 		

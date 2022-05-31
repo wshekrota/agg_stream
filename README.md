@@ -2,6 +2,10 @@
 ### Aggregate a stream based on predetermined rules.
 Stream is binary or byte and will decode from json to internal.
 
+json sample:
+{"id":121509,"market":5773,"price":1.234,"volume":1234.56,"is_buy":true}
+...
+
 Will reveal following keys..
 
 ---
