@@ -3,6 +3,7 @@
 Stream is binary or byte and will decode from json to internal.
 
 Will reveal following keys..
+
 '''
 id 
 
@@ -13,13 +14,16 @@ price
 volume 
 
 is_buy
+
 '''
+
 The key to aggregate on is market. Maintain a key | value for each unique market.
 
 Value will be the map of aggregation for that market.
 
 Keys in the per market map will be...
 '''
+
   total_volume +=
   
   total_price  +=
@@ -35,7 +39,9 @@ Keys in the per market map will be...
   count count += 1
   
   count_buy if buy { count_buy += 1 }
+  
 '''
+
 So overall structure is 
 
 ### map[string]map[string]float64{}.
