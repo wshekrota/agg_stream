@@ -91,6 +91,7 @@ func main() {
 			output[market] = map[string]float64{
 				"count":                         1.,
 				"count_buy":                     buy,
+				"total_price":                  Hash["price"].(float64),
 				"total_volume":                  Hash["volume"].(float64),
 				"mean_price":                    Hash["price"].(float64),
 				"mean_volume":                   Hash["volume"].(float64),
